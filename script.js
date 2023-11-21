@@ -30,7 +30,8 @@ for (let i = 0; i < data.results.length; i++) {
   ficheEvenement.appendChild(titreEvenement);
 
   const imageEvenement = document.createElement("img");
-  imageEvenement.src = "adresse URL source";
+  imageEvenement.src = data.results[i].originalimage;
+  ficheEvenement.appendChild(imageEvenement);
   const descriptionCourte = document.createElement("p");
   const dateHeure = document.createElement("p");
   const motsCles = document.createElement("h3");
