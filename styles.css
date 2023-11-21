@@ -58,3 +58,18 @@ main {
 	margin-top: 4px;
 	margin-bottom: 4px;
 }
+
+h4{
+	text-align: center;
+	color: white;
+	background-color: violet;
+}
+
+body{
+	background-color: blueviolet;
+	color: white;
+}
+
+h2{
+	text-align: center;
+}

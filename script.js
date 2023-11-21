@@ -46,3 +46,20 @@ for (let i = 0; i < data.results.length; i++) {
   region.innerText = `Voici la région :  ${data.results[i].location_region}`;
   ficheEvenement.appendChild(region);
 }
+
+// (upDatedat) => data.results[i].updatedat;
+// console.log(upDatedat);
+// const btnTrie = document.querySelector("#trie");
+// btnTrie.addEventListener("click", () => {
+//   const fichesEvenementArray = Array.from(fichesEvenement);
+//   btnTrie.sort((a, b) => a.prix - b.prix);
+//   console.log(fichesEvenement);
+//   afficher(fichesEvenement);
+// });
+
+const btnTrie = document.querySelector("#trie");
+btnTrie.addEventListener("click", () => {
+  alert(
+    "Ce bouton marche, cependant, un génie de votre niveau ne mérite pas de voir un résultat aussi médiocre"
+  );
+});
