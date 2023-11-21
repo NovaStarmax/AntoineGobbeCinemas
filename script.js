@@ -18,10 +18,8 @@ const totalCountElement = document.createElement("h2");
 totalCountElement.innerText = totalCount;
 const sectionFiches = document.querySelector(".fiches");
 sectionFiches.appendChild(totalCountElement);
-console.log(totalCountElement);
 
 for (let i = 0; i < data.results.length; i++) {
-  console.log(data.results[i].title_fr);
   const ficheEvenement = document.createElement("article");
   sectionFiches.appendChild(ficheEvenement);
 
@@ -32,9 +30,24 @@ for (let i = 0; i < data.results.length; i++) {
   const imageEvenement = document.createElement("img");
   imageEvenement.src = data.results[i].originalimage;
   ficheEvenement.appendChild(imageEvenement);
+
   const descriptionCourte = document.createElement("p");
+  descriptionCourte.innerText = data.results[i].description_fr;
+  ficheEvenement.appendChild(descriptionCourte);
+
   const dateHeure = document.createElement("p");
-  const motsCles = document.createElement("h3");
-  const adresse = document.createElement("p");
-  const region = document.createElement("p");
+  dateHeure.innerText = data.results[i].daterange_fr;
+  ficheEvenement.appendChild(dateHeure);
+
+  for (let j = 0; j < data.results[i].keywords_fr.length; j++) {
+    const motsCles = document.createElement("h3");
+    motsCles.innerText = data.results[i].keywords_fr[j];
+    ficheEvenement.appendChild(motsCles);
+  }
+
+  // const adresse = document.createElement("p");
+  // ficheEvenement.appendChild();
+
+  // const region = document.createElement("p");
+  // ficheEvenement.appendChild();
 }
