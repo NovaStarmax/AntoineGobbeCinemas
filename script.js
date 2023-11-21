@@ -6,13 +6,6 @@ const reponse = await fetch(
 );
 const data = await reponse.json();
 
-// console.log("data", data);
-// const total_count = data.total_count;
-// total_count = document.createElement("h2")
-// const
-// console.log("nb resultat", data.total_count);
-// const results = data.results;
-// console.log("results", results);
 const totalCount = data.total_count;
 const totalCountElement = document.createElement("h2");
 totalCountElement.innerText = totalCount;
@@ -24,30 +17,32 @@ for (let i = 0; i < data.results.length; i++) {
   sectionFiches.appendChild(ficheEvenement);
 
   const titreEvenement = document.createElement("h2");
-  titreEvenement.innerText = data.results[i].title_fr;
+  titreEvenement.innerText = `Voici le titre du concert : ${data.results[i].title_fr}`;
   ficheEvenement.appendChild(titreEvenement);
 
   const imageEvenement = document.createElement("img");
-  imageEvenement.src = data.results[i].originalimage;
+  imageEvenement.src = ` ${data.results[i].originalimage}`;
   ficheEvenement.appendChild(imageEvenement);
 
   const descriptionCourte = document.createElement("p");
-  descriptionCourte.innerText = data.results[i].description_fr;
+  descriptionCourte.innerText = `Voici une courte description : ${data.results[i].description_fr}`;
   ficheEvenement.appendChild(descriptionCourte);
 
   const dateHeure = document.createElement("p");
-  dateHeure.innerText = data.results[i].daterange_fr;
+  dateHeure.innerText = `Voici la date et l'heure : ${data.results[i].daterange_fr}`;
   ficheEvenement.appendChild(dateHeure);
 
   for (let j = 0; j < data.results[i].keywords_fr.length; j++) {
-    const motsCles = document.createElement("h3");
-    motsCles.innerText = data.results[i].keywords_fr[j];
+    const motsCles = document.createElement("p");
+    motsCles.innerText = `mot clef : ${data.results[i].keywords_fr[j]}`;
     ficheEvenement.appendChild(motsCles);
   }
 
-  // const adresse = document.createElement("p");
-  // ficheEvenement.appendChild();
+  const adresse = document.createElement("p");
+  adresse.innerText = `L'adresse ce trouve au :  ${data.results[i].location_address} ${data.results[i].location_postalcode}`;
+  ficheEvenement.appendChild(adresse);
 
-  // const region = document.createElement("p");
-  // ficheEvenement.appendChild();
+  const region = document.createElement("p");
+  region.innerText = `Voici la région :  ${data.results[i].location_region}`;
+  ficheEvenement.appendChild(region);
 }
